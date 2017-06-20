@@ -129,7 +129,7 @@
     "url-loader": "^0.5.7",
     "version-changelog": "^2.0.1",
     "web-app-manifest-loader": "^0.1.1",
-    "webpack": "^2.6.0",
+    "webpack": "^3.0.0",
     "webpack-bundle-analyzer": "^2.8.2",
     "webpack-dev-server": "^2.4.5",
     "webpack-manifest-plugin": "^1.1.0",

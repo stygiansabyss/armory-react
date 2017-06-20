@@ -10,14 +10,6 @@ const common = {
     template: paths.appHtml,
     inject: true,
   },
-  entry: {
-    vendor: [
-      'react',
-      'react-dom',
-      'redux',
-      'react-router-dom',
-    ],
-  },
 };
 
 module.exports = {
@@ -27,5 +19,18 @@ module.exports = {
     ...common,
     production: true,
     serviceWorker: true,
+
+    entry: {
+      vendor: [
+        'react',
+        'react-dom',
+        'redux',
+        'react-router-dom',
+
+        'punycode',
+        'symbol-observable',
+        'url',
+      ],
+    },
   }),
 };
