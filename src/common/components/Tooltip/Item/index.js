@@ -106,7 +106,7 @@ const ItemsTooltip = ({ data: {
         })}
 
         {item.details && <span className={colours.green}>
-          {markup(item.details.description, '\n')}
+          {markup(item.details.description)}
         </span>}
 
         {get(item, 'details.bonuses', []).map((bonusName, bonusId) => (

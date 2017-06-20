@@ -227,6 +227,10 @@ module.exports = ({
       // You can remove this if you don't use Moment.js:
       new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
 
+      // Scope hoisting.
+      // See: https://medium.com/webpack/webpack-3-official-release-15fd2dd8f07b
+      new webpack.optimize.ModuleConcatenationPlugin(),
+
       // See: https://medium.com/webpack/predictable-long-term-caching-with-webpack-d3eee1d3fa31
       // >> Start longterm caching strategy.
       longTermCache && new webpack.NamedModulesPlugin(),
@@ -234,7 +238,7 @@ module.exports = ({
       longTermCache && new webpack.NamedChunksPlugin((chunk) => {
         return chunk.name
           ? chunk.name
-          : chunk.modules.map((m) => path.relative(m.context, m.request)).join('_');
+          : chunk.mapModules((m) => path.relative(m.context, m.request)).join('_');
       }),
 
       longTermCache && new webpack.optimize.CommonsChunkPlugin({

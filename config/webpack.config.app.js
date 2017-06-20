@@ -12,10 +12,25 @@ const common = {
   },
   entry: {
     vendor: [
+      'axios',
+      'classnames',
+      'fastclick',
+      'punycode',
+      'symbol-observable',
+      'withinviewport',
+      'recompose',
+      'reselect',
+      'url',
+
       'react',
       'react-dom',
-      'redux',
+      'react-responsive',
+      'react-redux',
+      'react-helmet',
       'react-router-dom',
+      'i18n-react',
+
+      'redux',
     ],
   },
 };

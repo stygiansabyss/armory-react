@@ -32,8 +32,8 @@ export const selector = createSelector(
 );
 
 type Props = {
-  fetchAchievementGroups: () => Promise<*>,
-  fetchAchievementCategories: () => Promise<*>,
+  fetchAchievementGroups: (Array<number | string>) => Promise<*>,
+  fetchAchievementCategories: (Array<number>) => Promise<*>,
   fetchAchievements: (Array<number>) => Promise<*>,
   groups: AchievementGroups,
   categories: AchievementCategories,
@@ -70,8 +70,7 @@ class UserAchievements extends Component {
         const ids = reduce(groups, (arr, value) => arr.concat(value.categories), []);
 
         return this.props.fetchAchievementCategories(
-          ids,
-          dailyGroup.categories
+          [].concat(ids).concat(dailyGroup.categories),
         );
       });
   }

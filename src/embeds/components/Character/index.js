@@ -23,7 +23,10 @@ type Props = {
   name: string,
   character?: Character,
   selectCharacter?: (name: string) => void,
-  fetchCharacter?: (name: string) => void,
+  fetchCharacter?: (name: string, options?: {
+    redirect404: boolean,
+    basicLoad: boolean,
+  }) => void,
   items?: Items,
   skins?: Skins,
   className?: string,

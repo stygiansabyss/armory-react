@@ -54,7 +54,7 @@ function mapStateToProps (state, props) {
 }
 
 type Props = {
-  fetchPvpLeaderboard: () => Promise<>,
+  fetchPvpLeaderboard: (string, number, number) => Promise<>,
   leaderboard?: Paginated<PvpStanding>,
   region: 'gw2a' | 'na' | 'eu',
 };

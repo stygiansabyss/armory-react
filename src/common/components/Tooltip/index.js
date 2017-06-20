@@ -30,7 +30,7 @@ export type Props = {
     type: string,
     data: Object,
   },
-  showTooltip?: () => void,
+  showTooltip?: (shouldShow: boolean) => void,
   showBadge?: boolean,
   className?: string,
 };
