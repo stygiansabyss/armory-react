@@ -45,6 +45,7 @@ export default [{
   options: [
     'data-armory-ids="{IDS_COMMA_SEPARATED}" | use id:-1 for blank skills',
     'data-armory-{ITEM_ID}-stat="{ITEMSTAT_ID}" (optional)',
+    'data-armory-{ITEM_ID}-skin="{SKIN_ID}" (optional) | Sets the item icon as the skin',
     'data-armory-size="{NUMBER}" (optional)',
     'data-armory-blank-text="{STRING}" (optional, if missing, "optional" is used in its place)',
   ],
@@ -52,6 +53,13 @@ export default [{
 <div
   data-armory-embed="items"
   data-armory-ids="7139,74847,332211,993,109"
+>
+</div>
+
+<div
+  data-armory-embed="items"
+  data-armory-ids="76377"
+  data-armory-76377-skin="1416"
 >
 </div>
 

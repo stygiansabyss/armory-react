@@ -14,5 +14,14 @@ export default function (element: HTMLElement, ids: Array<number>) {
     return { [id]: parseInt(rawId, 10) };
   })
   .reduce((map, next) => Object.assign(map, next), {});
-  return (props: EmbedProps) => <Items {...props} ids={ids} statIds={statIds} />;
+  const skinIds = ids.map((id) => {
+    const rawId = element.getAttribute(`data-armory-${id}-skin`);
+    if (!rawId) {
+      return {};
+    }
+
+    return { [id]: parseInt(rawId, 10) };
+  })
+  .reduce((map, next) => Object.assign(map, next), {});
+  return (props: EmbedProps) => <Items {...props} ids={ids} statIds={statIds} skinIds={skinIds} />;
 }
